@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             valor: valor.value
         };
 
-        fetch('http://localhost:3000/api/registrar', {
+        fetch('http://192.168.88.53:3000/api/registrar', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
