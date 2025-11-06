@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     registroForm.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        const regexSKU = /^\d{6}$/;
+        const regexSKU = /^(\d{6}|\d{13})$/;
         if (!regexSKU.test(numeroSKU.value)){
             alert('Por favor, insira o SKU corretamente');
             return;
@@ -17,39 +17,36 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Por favor, insira o VALOR corretamente');
             return;
         }
-        const numeroSKUValor = numeroSKU.value;
-        const valorPeca = valor.value;
-
+        
+        
         const dadosParaEnvio = {
-            sku: numeroSKUValor,
-            valor: valorPeca
+            sku: numeroSKU.value,
+            valor: valor.value
         };
 
-        fetch('http://localhost:3000/api/registrar', {
+        fetch('http://192.168.88.53:3000/api/registrar', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(dadosParaEnvio)
-    })
-    .then(resposta => {
-        if (!resposta.ok) {
-            throw new Error('Erro na requisição: ' + resposta.statusText);
-        }
-        return resposta.json();
-    })
-    .then(dados => {
-        console.log('Dados salvos com sucesso: ', dados);
-        alert('Valor registrado com sucesso!');
-        registroForm.reset(); 
-    })
-    .catch(erro => {
-        console.error('Erro ao enviar dados: ', erro);
-        alert('Erro ao registrar o valor. Tente novamente.');
+            }, 
+            body: JSON.stringify(dadosParaEnvio)
+        })
+        .then(resposta => {
+            if (!resposta.ok) {
+                return resposta.json().then(err => {
+                    throw new Error(err.error || 'Erro desconhecido ao salvar os dados');
+                });
+            }
+            return resposta.json();
+        })
+        .then(dados => {
+            console.log('Dados salvos com sucesso: ', dados);
+            alert(dados.message);
+            registroForm.reset(); 
+        })
+        .catch(erro => {
+            console.error('Erro ao enviar dados: ', erro.message);
+            alert(erro.message);
+        });
     });
-        
-        console.log('SKU:', numeroSKUValor);
-        console.log('Valor:', valorPeca);
-    });
-        
 });
