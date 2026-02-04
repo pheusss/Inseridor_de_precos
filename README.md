@@ -4,6 +4,7 @@ Ferramenta desenvolvida para otimizar o processo de atualização de preços em 
 
 
 🛠️ Tecnologias Utilizadas
+
 Front-end: HTML5 e CSS3 para interface de usuário.
 
 Lógica de Programação: JavaScript para manipulação de dados e integração.
@@ -11,7 +12,9 @@ Lógica de Programação: JavaScript para manipulação de dados e integração.
 Banco de Dados: Integração para manipulação direta de registros de preços.
 
 
+
 📈 Impacto do Projeto
+
 Eficiência: Redução drástica no tempo de etiquetagem e atualização de preços nas lojas.
 
 Confiabilidade: Eliminação de erros manuais de digitação ao utilizar a automação via código de barras.
@@ -19,7 +22,9 @@ Confiabilidade: Eliminação de erros manuais de digitação ao utilizar a autom
 Escalabilidade: Ferramenta utilizada em produção em um cenário real de larga escala.
 
 
+
 💻 Como funciona
+
 O colaborador bipa o código de barras da peça.
 
 O sistema identifica o item equivalente.
