@@ -1,6 +1,6 @@
 Inseridor de Preços Automatizado 🚀
 
-Ferramenta desenvolvida para otimizar o processo de atualização de preços em um ambiente de varejo com 34 lojas. A solução permite a bipagem de códigos de barras de peças equivalentes e a inserção automática do preço diretamente no banco de dados da unidade.
+Ferramenta desenvolvida para otimizar o processo de atualização de preços em um ambiente de varejo. A solução permite a bipagem de códigos de barras de peças equivalentes e a inserção automática do preço diretamente no banco de dados da unidade.
 
 
 🛠️ Tecnologias Utilizadas
